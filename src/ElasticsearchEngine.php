@@ -190,7 +190,7 @@ class ElasticsearchEngine extends Engine
      */
     public function map($results, $model)
     {
-        if (!$results['hits']['total'] || sizeof($results['hits']['total']) == 0) {
+        if (empty($results['hits']['total'])) {
             return Collection::make();
         }
 
